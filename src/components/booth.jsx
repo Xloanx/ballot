@@ -20,6 +20,7 @@ class Booth extends Component {
     render() { 
         return ( 
             <React.Fragment>
+                <button type="button" class="btn btn-outline-info">Add New Contestant</button>
                 <h3>Showing {this.state.contestants.length} contestants from <strong>somegroup</strong> group in the database</h3>
                 <table className="table table-striped table-hover">
                     <thead>
@@ -37,7 +38,7 @@ class Booth extends Component {
                             <tr key={contestant._id}>
                                 <td>{index+1}</td>
                                 <td>{contestant.name}</td>
-                                <td><img src="" /></td>
+                                <td><img src={contestant.picture.thumbnail} /></td>
                                 <td>{contestant.group.name}</td>
                                 <td><div className="form-check form-switch">
                                     <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" />
