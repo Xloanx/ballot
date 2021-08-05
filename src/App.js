@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/navbar';
 import Welcome from './components/welcome';
 import Booth from './components/booth';
+import Footer from './components/footer';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/welcome" component={Welcome} />
         <Route path="/booth" component={Booth} />
       </Switch>
+      <Footer />
     </main>
   );
 }
