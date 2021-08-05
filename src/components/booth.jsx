@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import { getContestants } from '../services/fakeContenstantService';
 import { getPositions } from '../services/fakePositionService';
+import { recordExpression } from '@babel/types';
 
 
 class Booth extends Component {
@@ -13,8 +15,16 @@ class Booth extends Component {
         const contestant = getContestants();
         const position = getPositions();
         const positions = [ {name: "All Contestants"}, ...position];
-        console.log(positions);
         this.setState({contestants:contestant, positions});
+     }
+
+     handleDelete = (contestant) =>{
+        const contestants = this.state.contestants.filter( c => c._id !== contestant._id);
+        this.setState({contestants});
+     }
+
+     handleEdit = (contestant) => {
+         console.log(contestant);
      }
 
     render() {
@@ -25,16 +35,16 @@ class Booth extends Component {
         }
         return ( 
             <React.Fragment>
-            <div class="row align-items-start">
-                <div class="col-3">
-                <div class="list-group">
+            <div className="row align-items-start">
+                <div className="col-3">
+                <div className="list-group">
                     {positions.map(position =>
-                        <a href="#" class="list-group-item list-group-item-action">{position.name}</a>
+                        <a key={position._id} href="#" className="list-group-item list-group-item-action">{position.name}</a>
                     )}
                 </div>
                 </div>
-                <div class="col">
-                <button type="button" class="btn btn-outline-info">Add New Contestant</button>
+                <div className="col">
+                <button type="button" className="btn btn-outline-info">Add New Contestant</button>
                 <h5>Showing {contestantsCount} contestants from <strong>somegroup</strong> group in the database</h5>
                 <table className="table table-striped table-hover">
                     <thead>
@@ -59,8 +69,10 @@ class Booth extends Component {
                                     <label className="form-check-label" htmlFor="flexSwitchCheckDefault"></label>
                                     </div>
                                 </td>
-                                <td><button type="button" class="btn btn-danger btn-sm m-2">Delete</button>
-                                    <button type="button" class="btn btn-secondary btn-sm">Edit</button></td>
+                                <td><button onClick={()=>this.handleDelete(contestant)} type="button" className="btn btn-danger btn-sm m-2">Delete</button>
+                                    <button onClick={()=>this.handleEdit(contestant)} type="button" className="btn btn-secondary btn-sm">Edit</button>
+                                    <Link to={`/booth/${contestant._id}`}>{contestant.name}</Link>
+                                </td>
                             </tr>
                             )}
                     </tbody>
