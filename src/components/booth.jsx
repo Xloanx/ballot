@@ -17,20 +17,25 @@ class Booth extends Component {
         this.setState({contestants:contestant, positions});
      }
 
-    render() { 
+    render() {
+        const { contestants, positions } = this.state
+        const {length:contestantsCount} = this.state.contestants;
+        if (contestantsCount === 0){
+            return <h5>Showing no contestants from the database</h5>
+        }
         return ( 
             <React.Fragment>
             <div class="row align-items-start">
                 <div class="col-3">
                 <div class="list-group">
-                    {this.state.positions.map(position =>
+                    {positions.map(position =>
                         <a href="#" class="list-group-item list-group-item-action">{position.name}</a>
                     )}
                 </div>
                 </div>
                 <div class="col">
                 <button type="button" class="btn btn-outline-info">Add New Contestant</button>
-                <h3>Showing {this.state.contestants.length} contestants from <strong>somegroup</strong> group in the database</h3>
+                <h5>Showing {contestantsCount} contestants from <strong>somegroup</strong> group in the database</h5>
                 <table className="table table-striped table-hover">
                     <thead>
                         <tr>
@@ -43,7 +48,7 @@ class Booth extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.state.contestants.map((contestant, index) =>
+                        {contestants.map((contestant, index) =>
                             <tr key={contestant._id}>
                                 <td>{index+1}</td>
                                 <td>{contestant.name}</td>
