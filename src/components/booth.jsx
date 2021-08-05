@@ -20,6 +20,15 @@ class Booth extends Component {
     render() { 
         return ( 
             <React.Fragment>
+            <div class="row align-items-start">
+                <div class="col-3">
+                <div class="list-group">
+                    {this.state.positions.map(position =>
+                        <a href="#" class="list-group-item list-group-item-action">{position.name}</a>
+                    )}
+                </div>
+                </div>
+                <div class="col">
                 <button type="button" class="btn btn-outline-info">Add New Contestant</button>
                 <h3>Showing {this.state.contestants.length} contestants from <strong>somegroup</strong> group in the database</h3>
                 <table className="table table-striped table-hover">
@@ -51,6 +60,11 @@ class Booth extends Component {
                             )}
                     </tbody>
                 </table>
+                </div>
+            </div>
+
+
+                
             </React.Fragment>
          );
     }
