@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { getContestants } from '../services/fakeContenstantService';
 import { getPositions } from '../services/fakePositionService';
-import { recordExpression } from '@babel/types';
+
 
 
 class Booth extends Component {
@@ -24,15 +24,20 @@ class Booth extends Component {
      }
 
      handleEdit = (contestant) => {
-         console.log(contestant);
+        <Link to={`/contestantsForm/${contestant._id}`}>{contestant.name}</Link>
      }
 
     render() {
         const { contestants, positions } = this.state
         const {length:contestantsCount} = this.state.contestants;
         if (contestantsCount === 0){
-            return <h5>Showing no contestants from the database</h5>
-        }
+            return(
+                <React.Fragment>
+                    <Link to="/contestantsForm/new" className="btn btn-outline-info" style={{ marginBottom:20}}>Add New Contestant</Link>
+                    <h5>Showing no contestants from the database</h5>
+                </React.Fragment>
+
+            )}
         return ( 
             <React.Fragment>
             <div className="row align-items-start">
@@ -44,7 +49,7 @@ class Booth extends Component {
                 </div>
                 </div>
                 <div className="col">
-                <button type="button" className="btn btn-outline-info">Add New Contestant</button>
+                <Link to="/contestantsForm/new" className="btn btn-outline-info" style={{ marginBottom:20}}>Add New Contestant</Link>
                 <h5>Showing {contestantsCount} contestants from <strong>somegroup</strong> group in the database</h5>
                 <table className="table table-striped table-hover">
                     <thead>
@@ -59,21 +64,21 @@ class Booth extends Component {
                     </thead>
                     <tbody>
                         {contestants.map((contestant, index) =>
-                            <tr key={contestant._id}>
-                                <td>{index+1}</td>
-                                <td>{contestant.name}</td>
-                                <td><img src={contestant.picture.thumbnail} /></td>
-                                <td>{contestant.group.name}</td>
-                                <td><div className="form-check form-switch">
-                                    <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" />
-                                    <label className="form-check-label" htmlFor="flexSwitchCheckDefault"></label>
-                                    </div>
-                                </td>
-                                <td><button onClick={()=>this.handleDelete(contestant)} type="button" className="btn btn-danger btn-sm m-2">Delete</button>
-                                    <button onClick={()=>this.handleEdit(contestant)} type="button" className="btn btn-secondary btn-sm">Edit</button>
-                                    <Link to={`/booth/${contestant._id}`}>{contestant.name}</Link>
-                                </td>
-                            </tr>
+                            
+                                <tr key={contestant._id}>
+                                    <td>{index+1}</td>
+                                    <td><Link to={`/contestantsDetails/${contestant._id}`}>{contestant.name}</Link></td>
+                                    <td><img src={contestant.picture.thumbnail} /></td>
+                                    <td>{contestant.group.name}</td>
+                                    <td><div className="form-check form-switch">
+                                        <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" />
+                                        <label className="form-check-label" htmlFor="flexSwitchCheckDefault"></label>
+                                        </div>
+                                    </td>
+                                    <td><button onClick={()=>this.handleDelete(contestant)} type="button" className="btn btn-danger btn-sm m-2">Delete</button>
+                                        <Link to={`/contestantsForm/${contestant._id}`} className="btn btn-secondary btn-sm" >Edit</Link>
+                                    </td>
+                                </tr>
                             )}
                     </tbody>
                 </table>
