@@ -33,10 +33,9 @@ class Booth extends Component {
         if (contestantsCount === 0){
             return(
                 <React.Fragment>
-                    <Link to="/contestantsForm/new" className="btn btn-outline-info" style={{ marginBottom:20}}>Add New Contestant</Link>
+                    <Link to="/contestantsForm/New" className="btn btn-outline-info" style={{ marginBottom:20}}>Add New Contestant</Link>
                     <h5>Showing no contestants from the database</h5>
                 </React.Fragment>
-
             )}
         return ( 
             <React.Fragment>
@@ -49,7 +48,7 @@ class Booth extends Component {
                 </div>
                 </div>
                 <div className="col">
-                <Link to="/contestantsForm/new" className="btn btn-outline-info" style={{ marginBottom:20}}>Add New Contestant</Link>
+                <Link to="/contestantsForm/New" className="btn btn-outline-info" style={{ marginBottom:20}}>Add New Contestant</Link>
                 <h5>Showing {contestantsCount} contestants from <strong>somegroup</strong> group in the database</h5>
                 <table className="table table-striped table-hover">
                     <thead>
