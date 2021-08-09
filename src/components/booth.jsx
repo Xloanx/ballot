@@ -1,3 +1,4 @@
+import { cloneWithShallow } from 'joi-browser';
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { getContestants } from '../services/fakeContenstantService';
@@ -10,7 +11,8 @@ import SelectionListGroup from './common/selectionListGroup';
 class Booth extends Component {
     state = { 
         contestants : [],
-        positions : []
+        positions : [],
+        selectedPosition: ""
      }
 
      componentDidMount() {
@@ -25,10 +27,25 @@ class Booth extends Component {
         this.setState({contestants});
      }
 
+     handlePositionSelect = position =>{
+        //console.log(`${position.name} selected`);
+        this.setState({selectedPosition: position});
+    }
+
     render() {
-        const { contestants, positions } = this.state
-        const {length:contestantsCount} = this.state.contestants;
-        if (contestantsCount === 0){
+        const { contestants, positions, selectedPosition } = this.state
+        
+        let filteredContestants = contestants;
+        if (selectedPosition && selectedPosition._id)
+            filteredContestants = contestants.filter(c=>c.position._id === selectedPosition._id)
+
+        const {length:filteredContestantsCount} =filteredContestants;
+
+        let headlines = selectedPosition.name === "All Contestants" || selectedPosition === ""
+                    ?<h5>Showing {filteredContestantsCount} contestants from the database </h5>
+                    :<h5>Showing {filteredContestantsCount} contestants from the database contesting for <strong>{selectedPosition.name}</strong> </h5>;
+
+        if (filteredContestantsCount === 0){
             return(
                 <React.Fragment>
                     <Link to="/contestantsForm/New" className="btn btn-outline-info" style={{ marginBottom:20}}>Add New Contestant</Link>
@@ -41,13 +58,15 @@ class Booth extends Component {
             <div className="row align-items-start">
                 <div className="col-3">
                     <SelectionListGroup 
-                    positions = {positions}/>
+                    positions = {positions}
+                    selectedPosition = {selectedPosition}
+                    onPositionSelect={this.handlePositionSelect}/>
                 </div>
                 <div className="col">
                     <Link to="/contestantsForm/New" className="btn btn-outline-info" style={{ marginBottom:20}}>Add New Contestant</Link>
-                    <h5>Showing {contestantsCount} contestants from <strong>somegroup</strong> group in the database</h5>
+                    {headlines}               
                     <BoothTable 
-                    contestants = { contestants}
+                    contestants = { filteredContestants}
                     onRowDelete = {this.handleContestantDelete}
                     />
                 </div>
