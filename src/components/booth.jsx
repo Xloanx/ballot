@@ -6,7 +6,7 @@ import SelectionListGroup from './common/selectionListGroup';
 
 import { getContestants } from '../services/fakeContenstantService';
 import { getPositions } from '../services/fakePositionService';
-import { getContestantVote, getContestantsVotes } from '../services/fakeVotesServices';
+import { getContestantVote, getContestantsVotes } from '../services/fakeVotesService';
 
 class Booth extends Component {
     state = { 

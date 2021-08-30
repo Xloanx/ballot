@@ -12,7 +12,7 @@ const Input = (props) => {
                 type={type}
                 name= {name}
                 id={name} 
-                className="form-control" 
+                className="form-control"
                 placeholder={label} 
                 value = {value}
                 onChange={onChange}/>

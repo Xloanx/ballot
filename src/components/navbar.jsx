@@ -20,19 +20,14 @@ const Navbar = () => {
                         <li className="nav-item">
                             <NavLink className="nav-link" to="/booth"> Booth </NavLink>
                         </li>
-                        <li className="nav-item dropdown">
-                            <NavLink className="nav-link dropdown-toggle" to="#" id="dropdown05" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</NavLink>
-                            <ul className="dropdown-menu" aria-labelledby="dropdown05">
-                            <li> <NavLink className="dropdown-item" to="#"> Dropdown 1 </NavLink></li>
-                            <li><NavLink className="dropdown-item" to="#"> Dropdown 2 </NavLink></li>
-                            <li><NavLink className="dropdown-item" to="#"> Dropdown 3 </NavLink></li>
-                            </ul>
+                        <li className="nav-item">
+                            <NavLink className="nav-link" to="/register"> Register </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/welcome"> Logout </NavLink>
+                            <NavLink className="nav-link" to="/logout"> Logout </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/welcome"> Login </NavLink>
+                            <NavLink className="nav-link" to="/login"> Login </NavLink>
                         </li>
                         </ul>
                         <form>

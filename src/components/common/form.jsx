@@ -7,6 +7,7 @@ import Select from "./select";
 import RememberMeCheckBox from "./rememberMeCheckBox";
 import FileInput from "./fileInput";
 import TextArea from "./textArea";
+import DataList from "./dataList";
 
 class Form extends Component {
   state = {
@@ -84,11 +85,12 @@ class Form extends Component {
     );
   }
 
-  renderTextArea(name, label, type){
+  renderTextArea(name, label, row, column){
     const {data, errors} = this.state;
     return (
       <TextArea 
-      type={type}
+      row={row}
+      column={column}
       name={name}
       label={label}
       value={data[name]}
@@ -102,6 +104,20 @@ class Form extends Component {
     const { data, errors } = this.state;
     return (
       <Select
+        label={label}
+        name={name}
+        value={data[name]}
+        options={options}
+        onChange={this.handleChange}
+        error={errors[name]}
+      />
+    );
+  }
+
+  renderDataList(name, label, options){
+    const {data, errors} = this.state;
+    return(
+      <DataList 
         label={label}
         name={name}
         value={data[name]}

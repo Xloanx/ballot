@@ -8,17 +8,24 @@ import Booth from './components/booth';
 import Footer from './components/footer';
 import Welcome from './components/welcome';
 import NotFound from "./components/notFound";
+import Login from "./components/login";
+import Register from "./components/register";
 
 class App extends Component {
     state = {}
     render() {
-        return ( <
-            main className = 'container-fluid' >
+        return ( < main className = 'container-fluid' >
             <
             Navbar / >
             <
             Switch >
             <
+            Route path = "/register"
+            component = { Register }
+            /> <
+            Route path = "/login"
+            component = { Login }
+            /> <
             Route path = "/contestantsForm/:contestantId"
             component = { ContestantsForm }
             />  <
