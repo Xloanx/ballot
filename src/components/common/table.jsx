@@ -3,13 +3,15 @@ import TableHeader from "./tableHeader";
 import TableBody from "./tableBody";
 
 const Table = (props) => {
-    const {contestants, columns, onRowDelete} =props;
+    const {filteredContestants, filteredContestantsVotes, columns, onVote, onRowDelete} =props;
     return ( 
         <table className='table'>
             <TableHeader columns={columns} />
             <TableBody 
-            contestants = {contestants} 
+            filteredContestants = {filteredContestants}
+            filteredContestantsVotes ={filteredContestantsVotes}
             columns = {columns}
+            onVote = {onVote}
             onRowDelete = {onRowDelete}/>
         </table>
      );

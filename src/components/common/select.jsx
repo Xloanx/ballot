@@ -3,7 +3,7 @@ import React from "react";
 const Select = (props) => {
   const { name, label, options, error, ...rest } = props;
   return (
-    <div className="form-group">
+    <div className="form-group mb-3">
       <label htmlFor={name}> {label} </label> <br />
       <select id={name} name={name} {...rest} className="form-control ">
         <option value=""> Select {label} </option>

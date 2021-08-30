@@ -4,7 +4,6 @@ const contestants = [{
         _id: "5b21ca3eeb7f6fbccd471815",
         name: "Seriki Abdul-Lateef",
         position: { _id: "5b21ca3eeb7f6fbccd471818", name: "President" },
-        totalVotes: 6,
         picture: {
             large: "https://randomuser.me/api/portraits/women/34.jpg",
             medium: "https://randomuser.me/api/portraits/med/women/34.jpg",
@@ -15,7 +14,6 @@ const contestants = [{
         _id: "5b21ca3eeb7f6fbccd471816",
         name: "Adedimeji Elias",
         position: { _id: "5b21ca3eeb7f6fbccd471818", name: "President" },
-        totalVotes: 12,
         "picture": {
             "large": "https://randomuser.me/api/portraits/women/66.jpg",
             "medium": "https://randomuser.me/api/portraits/med/women/66.jpg",
@@ -26,7 +24,6 @@ const contestants = [{
         _id: "5b21ca3eeb7f6fbccd471817",
         name: "Bakare Oluwaseun",
         position: { _id: "5b21ca3eeb7f6fbccd471828", name: "Financial Secretary" },
-        totalVotes: 10,
         "picture": {
             "large": "https://randomuser.me/api/portraits/men/58.jpg",
             "medium": "https://randomuser.me/api/portraits/med/men/58.jpg",
@@ -37,7 +34,6 @@ const contestants = [{
         _id: "5b21ca3eeb7f6fbccd471819",
         name: "Chika Ikechukwu",
         position: { _id: "5b21ca3eeb7f6fbccd471814", name: "General Secretary" },
-        totalVotes: 30,
         "picture": {
             "large": "https://randomuser.me/api/portraits/men/33.jpg",
             "medium": "https://randomuser.me/api/portraits/med/men/33.jpg",
@@ -48,7 +44,6 @@ const contestants = [{
         _id: "5b21ca3eeb7f6fbccd47181a",
         name: "Excel Anyanwu",
         position: { _id: "5b21ca3eeb7f6fbccd471814", name: "General Secretary" },
-        totalVotes: 3,
         "picture": {
             "large": "https://randomuser.me/api/portraits/men/84.jpg",
             "medium": "https://randomuser.me/api/portraits/med/men/84.jpg",
@@ -59,7 +54,6 @@ const contestants = [{
         _id: "5b21ca3eeb7f6fbccd47181b",
         name: "Awwal Mohammed",
         position: { _id: "5b21ca3eeb7f6fbccd471814", name: "General Secretary" },
-        totalVotes: 9,
         "picture": {
             "large": "https://randomuser.me/api/portraits/men/95.jpg",
             "medium": "https://randomuser.me/api/portraits/med/men/95.jpg",
@@ -70,7 +64,6 @@ const contestants = [{
         _id: "5b21ca3eeb7f6fbccd47181e",
         name: "Segun Olatunji",
         position: { _id: "5b21ca3eeb7f6fbccd471820", name: "Treasurer" },
-        totalVotes: 24,
         "picture": {
             "large": "https://randomuser.me/api/portraits/women/27.jpg",
             "medium": "https://randomuser.me/api/portraits/med/women/27.jpg",
@@ -81,7 +74,6 @@ const contestants = [{
         _id: "5b21ca3eeb7f6fbccd47181f",
         name: "Olumide Akinbobola",
         position: { _id: "5b21ca3eeb7f6fbccd471820", name: "Treasurer" },
-        totalVotes: 6,
         "picture": {
             "large": "https://randomuser.me/api/portraits/men/60.jpg",
             "medium": "https://randomuser.me/api/portraits/med/men/60.jpg",
@@ -92,7 +84,6 @@ const contestants = [{
         _id: "5b21ca3eeb7f6fbccd471821",
         name: "Fred Asemota",
         position: { _id: "5b21ca3eeb7f6fbccd471818", name: "President" },
-        totalVotes: 18,
         picture: {
             large: "https://randomuser.me/api/portraits/men/81.jpg",
             medium: "https://randomuser.me/api/portraits/med/men/81.jpg",

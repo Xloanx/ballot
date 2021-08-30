@@ -11,6 +11,7 @@ class TableHeader extends Component {
             <th>Name of Contestant</th>
             <th>Picture</th>
             <th>Position</th>
+            <th>Votes</th>
             <th>Vote</th>
             <th>&nbsp;</th>
         </tr>

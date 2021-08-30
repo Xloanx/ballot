@@ -6,6 +6,7 @@ import SubmitButton from "./submitButton";
 import Select from "./select";
 import RememberMeCheckBox from "./rememberMeCheckBox";
 import FileInput from "./fileInput";
+import TextArea from "./textArea";
 
 class Form extends Component {
   state = {
@@ -81,6 +82,20 @@ class Form extends Component {
         error={errors[name]}
       />
     );
+  }
+
+  renderTextArea(name, label, type){
+    const {data, errors} = this.state;
+    return (
+      <TextArea 
+      type={type}
+      name={name}
+      label={label}
+      value={data[name]}
+      onChange={this.handleChange}
+      error={errors[name]}
+      />
+    )
   }
 
   renderSelect(name, label, options) {

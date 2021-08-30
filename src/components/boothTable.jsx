@@ -6,12 +6,14 @@ class BoothTable extends Component {
     columns = [];
 
     render() {
-        const { contestants, onRowDelete } = this.props;
+        const { filteredContestants, filteredContestantsVotes, onVote, onRowDelete } = this.props;
         return (
             <React.Fragment>
                 <Table 
-                    contestants = {contestants}
+                    filteredContestants = {filteredContestants}
+                    filteredContestantsVotes = {filteredContestantsVotes}
                     columns ={this.columns}
+                    onVote = {onVote}
                     onRowDelete={onRowDelete}
                 />
             </React.Fragment>

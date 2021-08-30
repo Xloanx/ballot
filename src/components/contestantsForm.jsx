@@ -69,7 +69,8 @@ class ContestantsForm extends Form {
                 <form onSubmit={this.handleSubmit}>
                     {this.renderInput( 'nameOfContestant', "Name of Contestant")}
                     {this.renderFileInput( 'imageUpload', "Image Upload", "file" )}
-                    {this.renderSelect('positionId', "Select the Position this Contetstant is vying for", positions )}
+                    {this.renderSelect('positionId', "Vying Position", positions )}
+                    {this.renderTextArea('contestantDetails', 'Details of Contestant', 'textaraea' )}
                     {this.renderButton("Submit")}
                 </form>
             </React.Fragment>

@@ -6,7 +6,7 @@ const Input = (props) => {
     return ( 
         <div className='form-group mb-3'>
             <label htmlFor={name} 
-                className="visually-hidden">{label}</label>
+                >{label}</label>
                 
             <input 
                 type={type}

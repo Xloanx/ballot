@@ -14,7 +14,7 @@ const FileInput = (props) => {
             onChange={onChange}
             />
             <label className="input-group-text" 
-                    htmlFor="inputGroupFile02">Upload</label>
+                    htmlFor="inputGroupFile02">Upload Contestant Picture</label>
             
         </div>
      );
